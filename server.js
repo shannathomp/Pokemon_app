@@ -20,12 +20,8 @@ app.get('/', (req,res) => {
 })
 
 app.get('/pokemon', (req,res) => {
-    res.render('pokemon')
+    res.render('index', {data: pokemon})
 })
-
-// app.get('/pokemon', (req,res) => {
-//     res.render('index', {data: pokemon})
-// })
 
 app.listen(port, () => {
     console.log(`running`);
