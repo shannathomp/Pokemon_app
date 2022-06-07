@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PageTitle</title>
+    <title>
+        <%= pageTitle %>
+    </title>
 </head>
-<body>
-    <h1>See All The Pokemon!</h1>
 
+<body>
+    <h1>
+        <%= pageHeader %>
+    </h1>
     <ul>
-        <% data.map( (pokemon, index) => { %>
-<li>
-    <%= pokemon.name.charAt(0).toUpperCase() +pokemon.name.slice(1) %>
-    <!-- <img src=" <%= `${pokemon.img}.jpg`%>" alt=""> -->
-</li>
-     <% } ) %>
-   </ul>
+        <% pokemonData.map((pokemon , index) => { %>
+            <li>
+                <%= pokemon.name.charAt(0).toUpperCase() +pokemon.name.slice(1) %>
+            </li>
+            <a href="/pokemon/<%= index %>">See the pokemon Info</a>
+            <% }) %>
+    </ul>
+
+
 </body>
+
 </html>
